@@ -1,0 +1,472 @@
+;		RADDRIZZATONDI
+; configurazione assi  
+; 2010-06-28
+;
+;		ASSI CONTROLLATI
+;________________________________________________________________________________________________
+;
+axis[1].enable=TRUE;							carrello scarico
+axis[1].controlled=TRUE;
+axis[1].handle=1;
+ctl_axis[1].config.enable=TRUE;
+ctl_axis[1].config.virtax_enable=TRUE;
+ctl_axis[1].config.transmission.rotating=FALSE;
+ctl_axis[1].config.transmission.ratio=2512;	* 0.01 mm/giro
+ctl_axis[1].config.transmission.dir_reverse=TRUE;
+ctl_axis[1].config.ext_encoder.enable=FALSE;
+ctl_axis[1].config.homing.enable=TRUE;
+ctl_axis[1].config.homing.search_fwd=TRUE;
+ctl_axis[1].config.homing.ref_sensor_nc=FALSE;
+;ctl_axis[1].config.homing.din_reference=0;
+;ctl_axis[1].config.homing.reference_path=;
+ctl_axis[1].config.homing.high_speed=3000;
+ctl_axis[1].config.homing.low_speed=300;
+ctl_axis[1].config.brake_timer.duration=6000;	* 0.01 s
+ctl_axis[1].config.pos_limits_enable=TRUE;
+ctl_axis[1].config.pos_limit_low=31500;			* 0.01 mm
+ctl_axis[1].config.pos_limit_high=384500;		* 0.01 mm
+ctl_axis[1].config.pos_offset=384200;			* 0.01 mm
+ctl_axis[1].config.max_lag_error=3000;			* 0.01 mm
+ctl_axis[1].config.max_speed=120000;			* 0.01 mm/s
+ctl_axis[1].config.max_accel=120000;			* 0.01 mm/s^2
+ctl_axis[1].config.max_jolt_time=0;				s
+ctl_axis[1].config.controller.position.kv=20;	1/s
+ctl_axis[1].config.controller.position.tn=0;	s
+ctl_axis[1].config.controller.position.t_predict=0.0016;
+ctl_axis[1].config.controller.position.t_total=0.0016;
+ctl_axis[1].config.controller.speed.kv=1;
+ctl_axis[1].config.controller.speed.tn=0;
+ctl_axis[1].config.controller.speed.t_filter=0.001;
+;
+axis[2].enable=TRUE;							carrello carico
+axis[2].controlled=TRUE;
+axis[2].handle=2;
+ctl_axis[2].config.enable=TRUE;
+ctl_axis[2].config.virtax_enable=TRUE;
+ctl_axis[2].config.transmission.rotating=FALSE;
+ctl_axis[2].config.transmission.ratio=2512;	* 0.01 mm/giro
+ctl_axis[2].config.transmission.dir_reverse=FALSE;
+ctl_axis[2].config.ext_encoder.enable=FALSE;
+ctl_axis[2].config.homing.enable=TRUE;
+ctl_axis[2].config.homing.search_fwd=FALSE;
+ctl_axis[2].config.homing.ref_sensor_nc=TRUE;
+;ctl_axis[2].config.homing.din_reference=0;
+;ctl_axis[2].config.homing.reference_path=;
+ctl_axis[2].config.homing.high_speed=3000;
+ctl_axis[2].config.homing.low_speed=300;
+ctl_axis[2].config.brake_timer.duration=6000;	* 0.01 s
+ctl_axis[2].config.pos_limits_enable=TRUE;
+ctl_axis[2].config.pos_limit_low=-384300;		* 0.01 mm
+ctl_axis[2].config.pos_limit_high=-31500;		* 0.01 mm
+ctl_axis[2].config.pos_offset=-384000;			* 0.01 mm
+ctl_axis[2].config.max_lag_error=3000;			* 0.01 mm
+ctl_axis[2].config.max_speed=120000;			* 0.01 mm/s
+ctl_axis[2].config.max_accel=120000;			* 0.01 mm/s^2
+ctl_axis[2].config.max_jolt_time=0;				s
+ctl_axis[2].config.controller.position.kv=20;	1/s
+ctl_axis[2].config.controller.position.tn=0;	s
+ctl_axis[2].config.controller.position.t_predict=0.0016;
+ctl_axis[2].config.controller.position.t_total=0.0016;
+ctl_axis[2].config.controller.speed.kv=1;
+ctl_axis[2].config.controller.speed.tn=0;
+ctl_axis[2].config.controller.speed.t_filter=0.001;
+;
+art.press.z_axis=3;
+axis[3].enable=TRUE;							leva pressa
+axis[3].controlled=TRUE;
+axis[3].handle=3;
+ctl_axis[3].config.enable=TRUE;
+ctl_axis[3].config.virtax_enable=FALSE;			movimenti non filtrati
+ctl_axis[3].config.transmission.rotating=FALSE;
+ctl_axis[3].config.transmission.ratio=500;		* 0.01 mm/giro
+ctl_axis[3].config.transmission.dir_reverse=FALSE;
+ctl_axis[3].config.ext_encoder.enable=FALSE;
+ctl_axis[3].config.absolute=TRUE;
+ctl_axis[3].config.homing.enable=FALSE;
+;ctl_axis[3].config.homing.search_fwd=TRUE;
+;ctl_axis[3].config.homing.ref_sensor_nc=FALSE;
+;ctl_axis[3].config.homing.din_reference=0;
+;ctl_axis[3].config.homing.reference_path=;
+;ctl_axis[3].config.homing.high_speed=300;
+;ctl_axis[3].config.homing.low_speed=50;
+ctl_axis[3].config.brake_timer.duration=0;		* 0.01 s
+ctl_axis[3].config.pos_limits_enable=TRUE;
+ctl_axis[3].config.pos_limit_low=5300;			* 0.01 mm
+ctl_axis[3].config.pos_limit_high=9000;			* 0.01 mm
+ctl_axis[3].config.pos_offset=-499310;			* 0.01 mm
+ctl_axis[3].config.max_lag_error=25;			* 0.01 mm		???
+ctl_axis[3].config.max_speed=390;				* 0.01 mm/s
+ctl_axis[3].config.max_accel=1500;				* 0.01 mm/s^2
+ctl_axis[3].config.max_jolt_time=0;				s
+ctl_axis[3].config.controller.position.kv=40;	1/s
+ctl_axis[3].config.controller.position.tn=0;	s
+ctl_axis[3].config.controller.position.t_predict=0.0016;
+ctl_axis[3].config.controller.position.t_total=0.0016;
+ctl_axis[3].config.controller.speed.kv=1.2;
+ctl_axis[3].config.controller.speed.tn=0;
+ctl_axis[3].config.controller.speed.t_filter=0.001;
+;
+axis[4].enable=TRUE;							prismi
+axis[4].controlled=TRUE;
+axis[4].handle=4;
+ctl_axis[4].config.enable=TRUE;
+ctl_axis[4].config.virtax_enable=FALSE;
+ctl_axis[4].config.transmission.rotating=FALSE;
+ctl_axis[4].config.transmission.ratio=71.4;	* 0.01 mm/giro	???
+ctl_axis[4].config.transmission.dir_reverse=FALSE;
+ctl_axis[4].config.ext_encoder.enable=FALSE;
+ctl_axis[4].config.homing.enable=TRUE;
+ctl_axis[4].config.homing.search_fwd=TRUE;
+ctl_axis[4].config.homing.ref_sensor_nc=FALSE;
+ctl_axis[4].config.homing.din_reference=0;
+ctl_axis[4].config.homing.reference_path=;
+ctl_axis[4].config.homing.high_speed=3000;
+ctl_axis[4].config.homing.low_speed=100;
+ctl_axis[4].config.brake_timer.duration=500;	* 0.01 s
+ctl_axis[4].config.pos_limits_enable=TRUE;
+ctl_axis[4].config.pos_limit_low=36000;		* 0.01 mm		???
+ctl_axis[4].config.pos_limit_high=74100;		* 0.01 mm		???
+ctl_axis[4].config.pos_offset=37000;				* 0.01 mm		???
+ctl_axis[4].config.max_lag_error=1000;			* 0.01 mm		???
+ctl_axis[4].config.max_speed=3600;				* 0.01 mm/s		???
+ctl_axis[4].config.max_accel=5000;				* 0.01 mm/s^2
+ctl_axis[4].config.max_jolt_time=0;				s
+ctl_axis[4].config.controller.position.kv=80;	1/s
+ctl_axis[4].config.controller.position.tn=0;	s
+ctl_axis[4].config.controller.position.t_predict=0.0016;
+ctl_axis[4].config.controller.position.t_total=0.0016;
+ctl_axis[4].config.controller.speed.kv=0.25;
+ctl_axis[4].config.controller.speed.tn=0;
+ctl_axis[4].config.controller.speed.t_filter=0.001;
+;
+axis[5].enable=TRUE;							rotazione tondo su carrello scarico
+axis[5].controlled=TRUE;
+axis[5].handle=5;
+ctl_axis[5].config.enable=TRUE;
+ctl_axis[5].config.virtax_enable=FALSE;			assi usati senza filtro
+;ctl_axis[5].config.slave_handle=6;				??? ************ DA PROVARE
+ctl_axis[5].config.transmission.rotating=FALSE;	si misura lungo la circonferenza del tondo
+ctl_axis[5].config.transmission.ratio=689.6;	* 0.01 mm/giro
+ctl_axis[5].config.transmission.dir_reverse=TRUE;
+ctl_axis[5].config.ext_encoder.enable=FALSE;
+ctl_axis[5].config.homing.enable=FALSE;			zero alla posizione di accensione
+;ctl_axis[5].config.homing.search_fwd=TRUE;
+;ctl_axis[5].config.homing.ref_sensor_nc=FALSE;
+;ctl_axis[5].config.homing.din_reference=0;
+;ctl_axis[5].config.homing.reference_path=;
+;ctl_axis[5].config.homing.high_speed=3000;
+;ctl_axis[5].config.homing.low_speed=100;
+ctl_axis[5].config.brake_timer.duration=500;	* 0.01 s
+ctl_axis[5].config.pos_limits_enable=FALSE;
+ctl_axis[5].config.pos_limit_low=-1000;			* 0.01 mm
+ctl_axis[5].config.pos_limit_high=1000;			* 0.01 mm
+ctl_axis[5].config.pos_offset=0;				* 0.01 mm
+ctl_axis[5].config.max_lag_error=3000;			* 0.01 mm
+ctl_axis[5].config.max_speed=26138;				* 0.01 mm/s per fare 1 giro in 2.08 secondi col tondo da 160mm
+ctl_axis[5].config.max_accel=60000;				* 0.01 mm/s^2
+ctl_axis[5].config.max_jolt_time=0.05;				s
+ctl_axis[5].config.controller.position.kv=100;	1/s
+ctl_axis[5].config.controller.position.tn=0;	s
+ctl_axis[5].config.controller.position.t_predict=0.0012;
+ctl_axis[5].config.controller.position.t_total=0.004;
+ctl_axis[5].config.controller.speed.kv=0.4;
+ctl_axis[5].config.controller.speed.tn=0;
+ctl_axis[5].config.controller.speed.t_filter=0.002;
+;
+axis[6].enable=TRUE;							rotazione tondo su carrello carico
+axis[6].controlled=TRUE;
+axis[6].handle=6;
+ctl_axis[6].config.enable=TRUE;
+ctl_axis[6].config.virtax_enable=FALSE;			assi usati senza filtro
+ctl_axis[6].config.transmission.rotating=FALSE;	si misura lungo la circonferenza del tondo
+ctl_axis[6].config.transmission.ratio=689.6;	* 0.01 mm/giro
+ctl_axis[6].config.transmission.dir_reverse=FALSE;
+ctl_axis[6].config.ext_encoder.enable=FALSE;
+ctl_axis[6].config.homing.enable=FALSE;			zero alla posizione di accensione
+;ctl_axis[6].config.homing.search_fwd=TRUE;
+;ctl_axis[6].config.homing.ref_sensor_nc=FALSE;
+;ctl_axis[6].config.homing.din_reference=0;
+;ctl_axis[6].config.homing.reference_path=;
+;ctl_axis[6].config.homing.high_speed=3000;
+;ctl_axis[6].config.homing.low_speed=100;
+ctl_axis[6].config.brake_timer.duration=500;	* 0.01 s
+ctl_axis[6].config.pos_limits_enable=FALSE;
+ctl_axis[6].config.pos_limit_low=-1000;			* 0.01 mm
+ctl_axis[6].config.pos_limit_high=1000;			* 0.01 mm
+ctl_axis[6].config.pos_offset=0;				* 0.01 mm
+ctl_axis[6].config.max_lag_error=3000;			* 0.01 mm
+ctl_axis[6].config.max_speed=26138;				* 0.01 mm/s
+ctl_axis[6].config.max_accel=60000;				* 0.01 mm/s^2
+ctl_axis[6].config.max_jolt_time=0.05;				s
+ctl_axis[6].config.controller.position.kv=100;	1/s
+ctl_axis[6].config.controller.position.tn=0;	s
+ctl_axis[6].config.controller.position.t_predict=0.0012;
+ctl_axis[6].config.controller.position.t_total=0.004;
+ctl_axis[6].config.controller.speed.kv=0.4;
+ctl_axis[6].config.controller.speed.tn=0;
+ctl_axis[6].config.controller.speed.t_filter=0.002;
+;
+;
+;		MOTORI ASINCRONI
+;________________________________________________________________________________________________
+;
+;
+;
+ObjAsyncMotor.hw_path=SL1.SS1.IF1; percorso HW dell'interfaccia CanOpen
+;[INVERTER_1]
+;
+;	Inverter BANCO_CARICO BATTUTA_TONDO BRACCETTI_CARICO
+; 	configurazione tabella assegnazione motori all'inverter
+;
+axis[11].enable=TRUE;
+axis[11].controlled=FALSE;
+axis[11].handle=1;										motore 1 inverter
+;
+ObjAsyncMotor.Inverter[1].Cmd.bMultimotore=TRUE;		sezione multimotore attiva
+ObjAsyncMotor.Inverter[1].boSelected=TRUE;				Inverter da installare sul bus CAN
+;
+; primo set della tabella, InclinazioneBancoCarico
+;
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[1].nMotor=1;		num. motore assegnato, deve esserci sempre e diverso da 0
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[1].nOutContactor=16;	n output che attiva il teleruttore di selezione del motore
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[1].nInpContactor=64;	n input stato del teleruttore di selezione del motore
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[1].nAnalIn=2;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[1].HighSpeed=1500;		
+ObjAsyncMotor.InfoMotor[1].RegularSpeed=1250;
+ObjAsyncMotor.InfoMotor[1].SlowSpeed=1000;
+ObjAsyncMotor.InfoMotor[1].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[1].SpaceDecHS=3;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[1].SpaceDecRS=2;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[1].SpaceDecSS=1;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[1].SpaceDecStop=1;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[1].MaxErrPos=3;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[1].LimitMaxPos=205;				posizione alta  
+ObjAsyncMotor.InfoMotor[1].LimitMinPos=20;    			posizione bassa
+ObjAsyncMotor.InfoMotor[1].TimeOutMov=6000;
+ObjAsyncMotor.InfoMotor[1].noCheckErr=TRUE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;secondo set della tabella, InclinazioneBattutaTondo
+;
+axis[12].enable=TRUE;
+axis[12].controlled=FALSE;
+axis[12].handle=2;										motore 2 inverter
+;
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[2].nMotor=2;		num. motore assegnato  ' questo ci deve essere sempre' 
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[2].nOutContactor=17;	n output che attiva il teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[2].nInpContactor=65;	n input stato del teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[2].nAnalIn=3;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[2].HighSpeed=500;				rpm
+ObjAsyncMotor.InfoMotor[2].RegularSpeed=350;
+ObjAsyncMotor.InfoMotor[2].SlowSpeed=250;
+ObjAsyncMotor.InfoMotor[2].StopSpeed=100;
+ObjAsyncMotor.InfoMotor[2].SpaceDecHS=45;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[2].SpaceDecRS=50;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[2].SpaceDecSS=17;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[2].SpaceDecStop=3;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[2].MaxErrPos=5;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[2].LimitMaxPos=570;			posizione alta
+ObjAsyncMotor.InfoMotor[2].LimitMinPos=500;    			posizione bassa
+ObjAsyncMotor.InfoMotor[2].TimeOutMov=6000;				* 10 ms
+ObjAsyncMotor.InfoMotor[2].noCheckErr=FALSE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;terzo set della tabella, BraccettiCarico due motori insieme
+;
+axis[13].enable=TRUE;
+axis[13].controlled=FALSE;
+axis[13].handle=3;										motore 3 inverter
+;
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[3].nMotor=3;		num. motore assegnato  ' questo ci deve essere sempre' 
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[3].nOutContactor=18;	n output che attiva il teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[3].nInpContactor=66;	n input stato del teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[1].Cmd.TableAssignMotor[3].nAnalIn=-231;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[3].HighSpeed=1500;				rpm
+ObjAsyncMotor.InfoMotor[3].RegularSpeed=1100;
+ObjAsyncMotor.InfoMotor[3].SlowSpeed=700;
+ObjAsyncMotor.InfoMotor[3].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[3].SpaceDecHS=55;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[3].SpaceDecRS=40;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[3].SpaceDecSS=15;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[3].SpaceDecStop=5;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[3].MaxErrPos=30;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[3].LimitMaxPos=520;				limite sup. ain14
+ObjAsyncMotor.InfoMotor[3].LimitMinPos=20;    			limite inf. ain13
+ObjAsyncMotor.InfoMotor[3].TimeOutMov=6000;				* 10 ms
+ObjAsyncMotor.InfoMotor[3].noCheckErr=TRUE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;------------------------------------------------------------------------------------------------------
+;
+;[INVERTER_2]
+;
+;	Inverter RULLIERA BRACCETTI_CENTRALI TASTATORI
+; 	configurazione tabella assegnazione motori all'inverter
+;
+axis[14].enable=TRUE;
+axis[14].controlled=FALSE;
+axis[14].handle=4;										motore 1 inverter
+;
+ObjAsyncMotor.Inverter[2].Cmd.bMultimotore=TRUE;		sezione multimotore attiva
+ObjAsyncMotor.Inverter[2].boSelected=TRUE;				Inverter da installare sul bus CAN
+;
+; primo set della tabella, Rulliera
+;
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[1].nMotor=4;		num. motore assegnato, deve esserci sempre e diverso da 0
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[1].nOutContactor=19;	n output che attiva il teleruttore di selezione del motore
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[1].nInpContactor=67;	n input stato del teleruttore di selezione del motore
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[1].nAnalIn=0;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[4].HighSpeed=1500;		
+ObjAsyncMotor.InfoMotor[4].RegularSpeed=1100;
+ObjAsyncMotor.InfoMotor[4].SlowSpeed=700;
+ObjAsyncMotor.InfoMotor[4].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[4].SpaceDecHS=100;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[4].SpaceDecRS=50;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[4].SpaceDecSS=10;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[4].SpaceDecStop=3;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[4].MaxErrPos=5;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[4].LimitMaxPos=32767;			posizione alta  
+ObjAsyncMotor.InfoMotor[4].LimitMinPos=-32767;    		posizione bassa
+ObjAsyncMotor.InfoMotor[4].TimeOutMov=6000;
+ObjAsyncMotor.InfoMotor[4].noCheckErr=TRUE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;secondo set della tabella, Posizione Tastatori
+;
+axis[15].enable=TRUE;
+axis[15].controlled=FALSE;
+axis[15].handle=5;										motore 2 inverter
+;
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[2].nMotor=5;		num. motore assegnato  ' questo ci deve essere sempre' 
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[2].nOutContactor=20;	n output che attiva il teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[2].nInpContactor=68;	n input stato del teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[2].nAnalIn=15;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[5].HighSpeed=500;				//??? 1500		rpm
+ObjAsyncMotor.InfoMotor[5].RegularSpeed=300;			//??? 1100
+ObjAsyncMotor.InfoMotor[5].SlowSpeed=100;				//??? 700
+ObjAsyncMotor.InfoMotor[5].StopSpeed=25;				//??? 250
+ObjAsyncMotor.InfoMotor[5].SpaceDecHS=100;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[5].SpaceDecRS=50;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[5].SpaceDecSS=10;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[5].SpaceDecStop=5;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[5].MaxErrPos=7;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[5].LimitMaxPos=400;				posizione alta
+ObjAsyncMotor.InfoMotor[5].LimitMinPos=0;    			posizione bassa
+ObjAsyncMotor.InfoMotor[5].TimeOutMov=6000;				* 10 ms
+ObjAsyncMotor.InfoMotor[5].noCheckErr=FALSE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;terzo set della tabella, BraccettiCentrali
+;
+axis[16].enable=TRUE;
+axis[16].controlled=FALSE;
+axis[16].handle=6;										motore 3 inverter
+;
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[3].nMotor=6;		num. motore assegnato  ' questo ci deve essere sempre' 
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[3].nOutContactor=21;	n output che attiva il teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[3].nInpContactor=69;	n input stato del teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[2].Cmd.TableAssignMotor[3].nAnalIn=16;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[6].HighSpeed=1500;				rpm
+ObjAsyncMotor.InfoMotor[6].RegularSpeed=1100;
+ObjAsyncMotor.InfoMotor[6].SlowSpeed=700;
+ObjAsyncMotor.InfoMotor[6].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[6].SpaceDecHS=55;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[6].SpaceDecRS=40;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[6].SpaceDecSS=15;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[6].SpaceDecStop=5;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[6].MaxErrPos=7;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[6].LimitMaxPos=370;				posizione pressa
+ObjAsyncMotor.InfoMotor[6].LimitMinPos=0;    			posizione rulliera
+ObjAsyncMotor.InfoMotor[6].TimeOutMov=6000;				* 10 ms
+ObjAsyncMotor.InfoMotor[6].noCheckErr=FALSE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;------------------------------------------------------------------------------------------------------
+;
+;[INVERTER_3]
+;
+;	Inverter BANCO_SCARICO BRACCETTI_SCARICO
+; 	configurazione tabella assegnazione motori all'inverter
+;
+axis[17].enable=TRUE;
+axis[17].controlled=FALSE;
+axis[17].handle=7;										motore 1 inverter
+;
+ObjAsyncMotor.Inverter[3].Cmd.bMultimotore=TRUE;		sezione multimotore attiva
+ObjAsyncMotor.Inverter[3].boSelected=TRUE;				Inverter da installare sul bus CAN
+;
+; primo set della tabella, InclinazioneBancoScarico
+;
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[1].nMotor=7;		num. motore assegnato, deve esserci sempre e diverso da 0
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[1].nOutContactor=22;	n output che attiva il teleruttore di selezione del motore
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[1].nInpContactor=70;	n input stato del teleruttore di selezione del motore
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[1].nAnalIn=4;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[7].HighSpeed=1500;		
+ObjAsyncMotor.InfoMotor[7].RegularSpeed=1250;
+ObjAsyncMotor.InfoMotor[7].SlowSpeed=1000;
+ObjAsyncMotor.InfoMotor[7].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[7].SpaceDecHS=3;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[7].SpaceDecRS=2;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[7].SpaceDecSS=1;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[7].SpaceDecStop=1;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[7].MaxErrPos=3;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[7].LimitMaxPos=310;				posizione interna  
+ObjAsyncMotor.InfoMotor[7].LimitMinPos=10;    			posizione fuori ingombro
+ObjAsyncMotor.InfoMotor[7].TimeOutMov=6000;
+ObjAsyncMotor.InfoMotor[7].noCheckErr=TRUE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;secondo set della tabella, Libero, non utilizzato
+;
+axis[18].enable=FALSE;
+axis[18].controlled=FALSE;
+axis[18].handle=8;										motore 2 inverter
+;
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[2].nMotor=8;		num. motore assegnato  ' questo ci deve essere sempre' 
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[2].nOutContactor=23;	n output che attiva il teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[2].nInpContactor=71;	n input stato del teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[2].nAnalIn=8;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[8].HighSpeed=1500;				rpm
+ObjAsyncMotor.InfoMotor[8].RegularSpeed=1100;
+ObjAsyncMotor.InfoMotor[8].SlowSpeed=700;
+ObjAsyncMotor.InfoMotor[8].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[8].SpaceDecHS=100;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[8].SpaceDecRS=50;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[8].SpaceDecSS=10;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[8].SpaceDecStop=5;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[8].MaxErrPos=20;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[8].LimitMaxPos=1000;				posizione alta
+ObjAsyncMotor.InfoMotor[8].LimitMinPos=0;    			posizione bassa
+ObjAsyncMotor.InfoMotor[8].TimeOutMov=6000;				* 10 ms
+ObjAsyncMotor.InfoMotor[8].noCheckErr=FALSE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;terzo set della tabella, BraccettiScarico due motori insieme
+;
+axis[19].enable=TRUE;
+axis[19].controlled=FALSE;
+axis[19].handle=9;										motore 3 inverter
+;
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[3].nMotor=9;		num. motore assegnato  ' questo ci deve essere sempre' 
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[3].nOutContactor=24;	n output che attiva il teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[3].nInpContactor=72;	n input stato del teleruttore di selezione del motore 
+ObjAsyncMotor.Inverter[3].Cmd.TableAssignMotor[3].nAnalIn=-232;	posizione analogica, se negativa l'indice e nella memoria
+; motore 
+ObjAsyncMotor.InfoMotor[9].HighSpeed=1500;				rpm
+ObjAsyncMotor.InfoMotor[9].RegularSpeed=1100;
+ObjAsyncMotor.InfoMotor[9].SlowSpeed=700;
+ObjAsyncMotor.InfoMotor[9].StopSpeed=250;
+ObjAsyncMotor.InfoMotor[9].SpaceDecHS=55;				mm deceleraz per HighSpeed
+ObjAsyncMotor.InfoMotor[9].SpaceDecRS=40;				mm deceleraz per RegularSpeed
+ObjAsyncMotor.InfoMotor[9].SpaceDecSS=15;				mm deceleraz per SlowSpeed
+ObjAsyncMotor.InfoMotor[9].SpaceDecStop=5;				mm deceleraz per StopSpeed
+ObjAsyncMotor.InfoMotor[9].MaxErrPos=30;					tolleranza pos (non minore di SpaceDecStop)
+ObjAsyncMotor.InfoMotor[9].LimitMaxPos=540;				posizione alta
+ObjAsyncMotor.InfoMotor[9].LimitMinPos=0;    			posizione bassa
+ObjAsyncMotor.InfoMotor[9].TimeOutMov=6000;				* 10 ms
+ObjAsyncMotor.InfoMotor[9].noCheckErr=TRUE; 				disabilita  ERROR_NO_CHANGE_POS
+;
+;------------------------------------------------------------------------------------------------------
+;END
+D
+

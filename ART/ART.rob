@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <ARL CompMode="BR" MaxPrgLines="500" />
+  <VNC IP="10.11.12.10" Password="1234" />
+</Root>

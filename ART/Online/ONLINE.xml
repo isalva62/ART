@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <FTP IP="10.11.12.10" Username="" Password="" CNF_RemoteDir="ANTILCNF" PRG_RemoteDir="ANTILPRG" PauseInterval="1000" />
+  <PVI DevType="TCP_IP" SourceStation="11" CpuAddress="10.11.12.10" CpuPort="11159" CpuResponceTimeout_ms="5000" VarsRefreshTime_ms="250" />
+  <VAR ID="ALARM" Address="system.alarm" IsOnlineModeVar="False" />
+  <VAR ID="EMERGENCY" Address="system.emergency" IsOnlineModeVar="False" />
+  <VAR ID="AUTO" Address="system.run_auto" IsOnlineModeVar="False" />
+  <VAR ID="BP[].ENABLED" Address="debug.bp[].enabled" IsOnlineModeVar="True" Lengths="11" />
+  <VAR ID="BP[].PROC_ID" Address="debug.bp[].proc_id" IsOnlineModeVar="True" Lengths="11" />
+  <VAR ID="BP[].PROG_ID" Address="debug.bp[].prog_id" IsOnlineModeVar="True" Lengths="11" />
+  <VAR ID="BP[].STEP" Address="debug.bp[].step" IsOnlineModeVar="True" Lengths="11" />
+  <VAR ID="BP[].ACTIVE" Address="debug.bp[].active" IsOnlineModeVar="True" Lengths="11" />
+  <VAR ID="BP[].DISARMED" Address="debug.bp[].disarrmed" IsOnlineModeVar="True" Lengths="11" />
+  <VAR ID="PROC[].ACTIVE" Address="proc_list[].active" IsOnlineModeVar="True" Lengths="13" />
+  <VAR ID="PROC[].BACKGROUND" Address="proc_list[].background" IsOnlineModeVar="True" Lengths="13" />
+  <VAR ID="PROC[].RUN_MODE" Address="proc_list[].run_mode" IsOnlineModeVar="True" Lengths="13" />
+  <VAR ID="PROC[].CALL_LVL" Address="proc_list[].cur_call" IsOnlineModeVar="True" Lengths="13" />
+  <VAR ID="PROC[].ALARM_GROUP" Address="proc_list[].alarm_group" IsOnlineModeVar="True" Lengths="13" />
+  <VAR ID="PROC[].ALARM_CODE" Address="proc_list[].alarm_code" IsOnlineModeVar="True" Lengths="13" />
+  <VAR ID="PROC[].STACK[].PROG_ID" Address="proc_list[].prog_stack[].prog_id" IsOnlineModeVar="True" Lengths="13;7" />
+  <VAR ID="PROC[].STACK[].CYCLE_COUNT" Address="proc_list[].prog_stack[].cycle_count" IsOnlineModeVar="True" Lengths="13;7" />
+  <VAR ID="PROC[].STACK[].CYCLE_SET" Address="proc_list[].prog_stack[].cycle_set" IsOnlineModeVar="True" Lengths="13;7" />
+  <VAR ID="PROC[].STACK[].CUR_STEP" Address="proc_list[].prog_stack[].cur_step" IsOnlineModeVar="True" Lengths="13;7" />
+  <VAR ID="MEM_TABLE[].VALUE" Address="mem_table[].val" IsOnlineModeVar="True" ResType="MEM" Lengths="512" />
+  <VAR ID="DIN_TABLE[].VALUE" Address="dig_table[].val" IsOnlineModeVar="True" ResType="DIN" Lengths="512" />
+  <VAR ID="DOUT_TABLE[].VALUE" Address="dig_table[].val" IsOnlineModeVar="True" ResType="DOUT" Lengths="512" />
+  <VAR ID="FLAG_TABLE[].VALUE" Address="dig_table[].val" IsOnlineModeVar="True" ResType="FLAG" Lengths="512" />
+  <VAR ID="RESET_ALARMS.ENABLE" Address="remote_control.ack_alarms.enable" IsOnlineModeVar="False" />
+  <VAR ID="RESET_ALARMS.OUT.STATUS" Address="remote_control.ack_alarms.status" IsOnlineModeVar="False" />
+  <VAR ID="RESET_ALARMS.OUT.RET_CODE" Address="remote_control.ack_alarms.return_code" IsOnlineModeVar="False" />
+  <VAR ID="START_PROC.ENABLE" Address="remote_control.start_procs.enable" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.IN.PROC_ID" Address="remote_control.start_procs.proc_id" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.IN.PROG_ID" Address="remote_control.start_procs.prog_id" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.IN.RUN_REQUEST" Address="remote_control.start_procs.run_request" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.IN.CYCLES" Address="remote_control.start_procs.cycles" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.IN.ROOT_ID" Address="remote_control.start_procs.root_id" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.OUT.STATUS" Address="remote_control.start_procs.status" IsOnlineModeVar="True" />
+  <VAR ID="START_PROC.OUT.RET_CODE" Address="remote_control.start_procs.return_code" IsOnlineModeVar="True" />
+  <VAR ID="UPDATE_PROC.ENABLE" Address="remote_control.update_procs.enable" IsOnlineModeVar="True" />
+  <VAR ID="UPDATE_PROC.IN.PROC_ID" Address="remote_control.update_procs.proc_id" IsOnlineModeVar="True" />
+  <VAR ID="UPDATE_PROC.IN.RUN_REQUEST" Address="remote_control.update_procs.run_request" IsOnlineModeVar="True" />
+  <VAR ID="UPDATE_PROC.OUT.STATUS" Address="remote_control.update_procs.status" IsOnlineModeVar="True" />
+  <VAR ID="UPDATE_PROC.OUT.RET_CODE" Address="remote_control.update_procs.return_code" IsOnlineModeVar="True" />
+  <VAR ID="STOP_PROC.ENABLE" Address="remote_control.stop_procs.enable" IsOnlineModeVar="True" />
+  <VAR ID="STOP_PROC.IN.PROC_ID" Address="remote_control.stop_procs.proc_id" IsOnlineModeVar="True" />
+  <VAR ID="STOP_PROC.OUT.STATUS" Address="remote_control.stop_procs.status" IsOnlineModeVar="True" />
+  <VAR ID="STOP_PROC.OUT.RET_CODE" Address="remote_control.stop_procs.return_code" IsOnlineModeVar="True" />
+  <VAR ID="INSERT_BP.ENABLE" Address="remote_control.insert_bp.enable" IsOnlineModeVar="True" />
+  <VAR ID="INSERT_BP.IN.PROG_ID" Address="remote_control.insert_bp.prog_id" IsOnlineModeVar="True" />
+  <VAR ID="INSERT_BP.IN.STEP" Address="remote_control.insert_bp.step" IsOnlineModeVar="True" />
+  <VAR ID="INSERT_BP.OUT.STATUS" Address="remote_control.insert_bp.status" IsOnlineModeVar="True" />
+  <VAR ID="INSERT_BP.OUT.RET_CODE" Address="remote_control.insert_bp.return_code" IsOnlineModeVar="True" />
+  <VAR ID="REMOVE_BP.ENABLE" Address="remote_control.remove_bp.enable" IsOnlineModeVar="True" />
+  <VAR ID="REMOVE_BP.IN.BP_ID" Address="remote_control.remove_bp.bp_id" IsOnlineModeVar="True" />
+  <VAR ID="REMOVE_BP.OUT.STATUS" Address="remote_control.remove_bp.status" IsOnlineModeVar="True" />
+  <VAR ID="REMOVE_BP.OUT.RET_CODE" Address="remote_control.remove_bp.return_code" IsOnlineModeVar="True" />
+</Root>

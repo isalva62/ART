@@ -1,0 +1,291 @@
+;		RADDRIZZATONDI
+; I/O digitali e analogici, flags  
+; 2010-07-08
+;
+; attributi: AT_PROT=1, AT_ESEC=2, AT_EMERG=4
+;
+;	OUTPUT										Circuito elettrico
+;
+dig_table[1].descr=Abil.potenza;
+emergency.dout_power_enable=1;
+dig_table[1].attributes=2;
+dig_table[2].descr=Pompa pressa;
+dig_table[2].attributes=2;
+dig_table[9].descr=Cicalino;
+dig_table[9].attributes=6;
+dig_table[10].descr=Luce verde;
+semaphore.dout_green=10;
+dig_table[11].descr=Luce gialla;
+dig_table[11].attributes=2;
+semaphore.dout_yellow=11;
+dig_table[12].descr=Luce rossa;
+dig_table[12].attributes=6;
+semaphore.dout_red=12;
+;
+dig_table[16].descr=Sel.mot.M10;
+dig_table[16].attributes=6;
+dig_table[17].descr=Sel.mot.M11;
+dig_table[17].attributes=6;
+dig_table[18].descr=Sel.mot.M12;
+dig_table[18].attributes=6;
+dig_table[19].descr=Sel.mot.M20;
+dig_table[19].attributes=6;
+dig_table[20].descr=Sel.mot.M21;
+dig_table[20].attributes=6;
+dig_table[21].descr=Sel.sollev.dx;
+dig_table[21].attributes=6;
+dig_table[22].descr=Sel.sollev.sx;
+dig_table[22].attributes=6;
+dig_table[24].descr=Sel.mot.M32;
+dig_table[24].attributes=6;
+;
+dig_table[21].descr=Sel.sollev.dx;
+dig_table[21].attributes=6;
+dig_table[22].descr=Sel.sollev.sx;
+dig_table[22].attributes=6;
+dig_table[23].descr=Sel.sollev.sxdx;
+dig_table[23].attributes=6;
+;
+;	INPUT
+;
+dig_table[49].descr=Emergenza ok;
+emergency.din_ok=49;
+dig_table[52].descr=Termico Pompa;
+;pressure.din_ok=51;
+dig_table[53].descr=Abil.manuale;
+emergency.din_man_enable=53;
+;
+dig_table[55].descr=Allin.tondo C1;
+dig_table[55].negate=TRUE;
+dig_table[56].descr=/Pres.tondo C1;
+dig_table[58].descr=Allin.tondo C2;
+dig_table[58].negate=TRUE;
+dig_table[59].descr=/Pres.tondo C2;
+dig_table[60].descr=Tondo pos.scarico;
+dig_table[61].descr=Tondo pos.carico;
+dig_table[62].descr=/Tondo su rulliera; Off tondo presente On rulliera libera
+dig_table[63].descr=Scarico pieno;
+dig_table[64].descr=Aux mot.M10;
+dig_table[65].descr=Aux mot.M11;
+dig_table[66].descr=Aux mot.M12;
+dig_table[67].descr=Aux mot.M20;
+dig_table[68].descr=Aux mot.M21;
+dig_table[69].descr=Aux mot.M22;
+dig_table[70].descr=Aux mot.M30;
+dig_table[72].descr=Aux mot.M32;
+;
+;												FLAGS
+;
+dig_table[97].descr=tastatore attivo;
+art.touch.flag_is_touching=97;
+dig_table[98].descr=rotaz in corso;
+dig_table[99].descr=tast centr mosso;
+dig_table[100].descr=TondoSuCarrelli;
+dig_table[100].attributes=6;
+dig_table[101].descr=reset effettuato;
+dig_table[101].attributes=6;
+dig_table[102].descr=Override pagine custom;			dalla pagina auto si richiama la pagina custom
+dig_table[102].attributes=6;
+dig_table[102].val=TRUE;
+page_custom.flag_override_pages=102;
+dig_table[103].descr=disabilita comandi custom;					
+page_custom.flag_disable_buttons=103;
+dig_table[126].descr=Automatico;
+dig_table[127].descr=Abilita overboost pressa;
+dig_table[127].attributes=2;
+dig_table[128].descr=DisabilitaTestTondoSuCarr;
+dig_table[128].attributes=0;
+;
+;----------------------------------------------- ANALOGICHE -----
+ana_table[1].descr=corsa pressa;
+ana_table[1].type=0;
+ana_table[1].min_val_sig=9354;
+ana_table[1].max_val_sig=32237;
+ana_table[1].min_val_scale=8500;
+ana_table[1].max_val_scale=40800;
+ana_table[1].filter_samples=4;					filtro su 40 ms
+art.press.z_sensor_ain=1;					ingresso analogico potenziometro pressa verticale							PROVVISORIAMENTE DISABILITATO
+;
+ana_table[2].descr=inclin.carico;
+ana_table[2].type=0;
+ana_table[2].min_val_sig=0;
+ana_table[2].max_val_sig=32768;
+ana_table[2].min_val_scale=0;
+ana_table[2].max_val_scale=22500;
+ana_table[2].filter_samples=10;					filtro su 100 ms
+;
+ana_table[3].descr=inclin.battuta;
+ana_table[3].type=0;
+ana_table[3].min_val_sig=0;
+ana_table[3].max_val_sig=32768;
+ana_table[3].min_val_scale=0;
+ana_table[3].max_val_scale=108000;
+ana_table[3].filter_samples=4;					filtro su 40 ms
+;
+ana_table[4].descr=inclin.scarico;
+ana_table[4].type=0;
+ana_table[4].min_val_sig=0;
+ana_table[4].max_val_sig=32768;
+ana_table[4].min_val_scale=0;
+ana_table[4].max_val_scale=15000;
+ana_table[4].filter_samples=4;					filtro su 40 ms
+;
+ana_table[5].descr=tastatore 1;
+ana_table[5].type=0;
+ana_table[5].min_val_sig=-12828;
+ana_table[5].max_val_sig=23676;
+ana_table[5].min_val_scale=1750;
+ana_table[5].max_val_scale=250;
+ana_table[5].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[1].ain=5;
+;
+ana_table[6].descr=tastatore 2;
+ana_table[6].type=0;
+ana_table[6].min_val_sig=-13534;
+ana_table[6].max_val_sig=23128;
+ana_table[6].min_val_scale=1750;
+ana_table[6].max_val_scale=250;
+ana_table[6].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[2].ain=6;
+;
+ana_table[7].descr=tastatore 3;
+ana_table[7].type=0;
+ana_table[7].min_val_sig=-13268;
+ana_table[7].max_val_sig=23350;
+ana_table[7].min_val_scale=1750;
+ana_table[7].max_val_scale=250;
+ana_table[7].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[3].ain=7;
+;
+ana_table[8].descr=tastatore 4;
+ana_table[8].type=0;
+ana_table[8].min_val_sig=-13548;
+ana_table[8].max_val_sig=23112;
+ana_table[8].min_val_scale=1750;
+ana_table[8].max_val_scale=250;
+ana_table[8].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[4].ain=8;
+;
+ana_table[9].descr=tastatore 5;
+ana_table[9].type=0;
+ana_table[9].min_val_sig=-12568;
+ana_table[9].max_val_sig=23964;
+ana_table[9].min_val_scale=1750;
+ana_table[9].max_val_scale=250;
+ana_table[9].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[5].ain=9;
+;
+ana_table[10].descr=tastatore 6;
+ana_table[10].type=0;
+ana_table[10].min_val_sig=-12608;
+ana_table[10].max_val_sig=23942;
+ana_table[10].min_val_scale=1750;
+ana_table[10].max_val_scale=250;
+ana_table[10].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[6].ain=10;
+;
+ana_table[11].descr=tastatore 7;
+ana_table[11].type=0;
+ana_table[11].min_val_sig=-13032;
+ana_table[11].max_val_sig=23522;
+ana_table[11].min_val_scale=1750;
+ana_table[11].max_val_scale=250;
+ana_table[11].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[7].ain=11;
+;
+ana_table[12].descr=tastatore 8;
+ana_table[12].type=0;
+ana_table[12].min_val_sig=-13088;
+ana_table[12].max_val_sig=23532;
+ana_table[12].min_val_scale=1750;
+ana_table[12].max_val_scale=250;
+ana_table[12].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[8].ain=12;
+;
+;												ANALOGICHE SU INVERTER
+ana_table[13].descr=bracc.car.1;
+ana_table[13].type=0;
+ana_table[13].min_val_sig=2154;
+ana_table[13].max_val_sig=6659;
+ana_table[13].min_val_scale=9000;
+ana_table[13].max_val_scale=27000;
+ana_table[13].filter_samples=4;					filtro su 40 ms
+;
+ana_table[14].descr=bracc.car.2;
+ana_table[14].type=0;
+ana_table[14].min_val_sig=2159;
+ana_table[14].max_val_sig=6597;
+ana_table[14].min_val_scale=45000;
+ana_table[14].max_val_scale=27000;
+ana_table[14].filter_samples=4;					filtro su 40 ms
+;
+ana_table[15].descr=pos.tastatori;
+ana_table[15].type=0;
+ana_table[15].min_val_sig=3020;
+ana_table[15].max_val_sig=3820;
+ana_table[15].min_val_scale=4000;
+ana_table[15].max_val_scale=18500;
+ana_table[15].filter_samples=4;					filtro su 40 ms
+;
+ana_table[16].descr=bracc.centrali;
+ana_table[16].type=0;
+ana_table[16].min_val_sig=1281;
+ana_table[16].max_val_sig=8192;
+ana_table[16].min_val_scale=0;
+ana_table[16].max_val_scale=91100;
+ana_table[16].filter_samples=4;					filtro su 40 ms
+;
+ana_table[17].descr=bracc.scar.1;
+ana_table[17].type=0;
+ana_table[17].min_val_sig=2370;
+ana_table[17].max_val_sig=6885;
+ana_table[17].min_val_scale=27000;
+ana_table[17].max_val_scale=9000;
+ana_table[17].filter_samples=4;					filtro su 40 ms
+;
+ana_table[18].descr=bracc.scar.2;
+ana_table[18].type=0;
+ana_table[18].min_val_sig=1447;
+ana_table[18].max_val_sig=5897;
+ana_table[18].min_val_scale=27000;
+ana_table[18].max_val_scale=45000;
+ana_table[18].filter_samples=4;					filtro su 40 ms
+;
+ana_table[19].descr=tast.centrale;
+ana_table[19].type=0;
+ana_table[19].min_val_sig=0;
+ana_table[19].max_val_sig=1000;
+ana_table[19].min_val_scale=0;
+ana_table[19].max_val_scale=500;				???
+ana_table[19].filter_samples=10;				filtro su 100 ms
+art.touch.touchsensors[0].ain=19;
+;
+ana_table[20].descr=manopola;
+ana_table[20].type=0;
+ana_table[20].min_val_sig=12;
+ana_table[20].max_val_sig=812;
+ana_table[20].min_val_scale=0;
+ana_table[20].max_val_scale=200;
+ana_table[20].filter_samples=0;
+;
+ana_table[21].descr=tastatore 9;
+ana_table[21].type=0;
+ana_table[21].min_val_sig=-13088;
+ana_table[21].max_val_sig=23532;
+ana_table[21].min_val_scale=1750;
+ana_table[21].max_val_scale=250;
+ana_table[21].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[9].ain=21;					
+;
+ana_table[22].descr=tastatore 10;
+ana_table[22].type=0;
+ana_table[22].min_val_sig=-13088;
+ana_table[22].max_val_sig=23532;
+ana_table[22].min_val_scale=1750;
+ana_table[22].max_val_scale=250;
+ana_table[22].filter_samples=10;					filtro su 100 ms
+art.touch.touchsensors[10].ain=22;
+;
+;END
+
+ND

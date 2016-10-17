@@ -1,0 +1,416 @@
+;		RADRIZZA TONDI
+; configurazione memorie
+; 2010-06-21
+;
+;			PASIZIONI ASSI CONTROLLATI
+mem_table[1].descr=quota carrello 1;
+mem_table[1].read_only=TRUE;
+ctl_axis[1].config.mem_pos=1;
+;
+mem_table[2].descr=quota carrello 2;
+mem_table[2].read_only=TRUE;
+ctl_axis[2].config.mem_pos=2;
+;
+mem_table[3].descr=quota teorica pressa;	non quota asse (=leva) ma quota calcolata pistone
+art.config.mem_z_setpoint=3
+;
+mem_table[4].descr=quota prismi;
+mem_table[4].read_only=TRUE;
+ctl_axis[4].config.mem_pos=4;
+;
+mem_table[5].descr=quota rulli 5;
+mem_table[5].read_only=TRUE;
+ctl_axis[5].config.mem_pos=5;
+;
+mem_table[6].descr=quota rulli 6;
+mem_table[6].read_only=TRUE;
+ctl_axis[6].config.mem_pos=6;
+;
+;
+;			POSIZIONE MOTORI
+;
+mem_table[11].descr=inclinaz.carico;
+mem_table[11].read_only=TRUE;
+ana_table[2].mem_val=11; valore dell'analogica [n] copiata alla memoria 'mem_val'
+;
+mem_table[12].descr=inclinaz.battuta tondo;
+mem_table[12].read_only=TRUE;
+ana_table[3].mem_val=12;
+;
+; Mem13 BraccCarico NON USATA Vedi Mem213 e Mem214
+;
+; Mem 14 PosAttRulliera ANALOGICA NON PRESENTE
+;
+mem_table[15].descr=pos.tastatori;
+mem_table[15].read_only=TRUE;
+ana_table[15].mem_val=15;
+;
+mem_table[16].descr=bracc.centrali;
+mem_table[16].read_only=TRUE;
+ana_table[16].mem_val=16;
+;
+mem_table[17].descr=inclinaz.scarico;
+mem_table[17].read_only=TRUE;
+ana_table[4].mem_val=17;
+;
+; Mem18 MOTORE NON PRESENTE
+;
+; Mem19 BraccsCarico NON USATA Vedi Mem217 e Mem218
+;
+;			LIBERE
+; dalla mem 21 alla 30
+;
+;
+;			PARAMETRI MANUALE
+mem_table[31].descr=distanza prismi voluta [mm];
+mem_table[32].descr=x tondo voluta [mm];
+mem_table[33].descr=tolleranza voluta [0.01 mm];
+mem_table[34].descr=deformazione voluta [0.01 mm];	//manopola
+mem_table[34].read_only=TRUE;
+ana_table[20].mem_val=34;							mappatura analogica manopola
+;
+;
+;			PARAMETRI LAVORAZIONE
+mem_table[41].descr=lunghezza tondo [mm];		mm
+art.piece.mem_length=41;
+mem_table[42].descr=diametro tondo  [mm];		mm
+art.piece.mem_diameter=42;
+mem_table[43].descr=Raddrizzatura Con Inseguimento; 0=Raddrizzatura normale 1=Raddrizzatura con inseguimento
+mem_table[44].descr=materiale;			1/2/3
+mem_table[44].val=1;
+mem_table[45].descr=tondi da lavorare;
+mem_table[46].descr=tondi lavorati;
+mem_table[47].descr=Ecc. max richiesta [0.01mm];		0.01 mm
+mem_table[49].val=5;
+mem_table[48].descr=toll sgross;		0.01 mm NON USATA
+mem_table[49].descr=toll raddriz;		0.01 mm
+mem_table[49].val=15;
+mem_table[50].descr=toll max err;		0.01 mm
+mem_table[51].descr=coeff sgross;		%
+mem_table[52].descr=coeff raddriz;		%
+mem_table[53].descr=coeff contro;		%
+mem_table[54].descr=tempo manten;		0.01 s
+mem_table[57].descr=numero massimo pressate;		
+mem_table[58].descr=Offset pestone;		offset in 0.01 mm per il pestone montato
+art.press.punches.active_punch_offset_mem=58;
+mem_table[59].descr=pestone montato;
+art.press.punches.active_punch_mem=59;
+;
+;
+;			PARAMETRI MACCHINA
+;mem_table[60].descr=Tondi Non Raddrizzati; Commentata per non sovrascrivere i tondi non raddrizzati
+mem_table[61].descr=Q_C1ScaricTondo;
+mem_table[61].val=95000;				0.01 mm quota lettura tondo allineato in scarico
+mem_table[61].read_only=TRUE;
+mem_table[62].descr=;				Disponibile
+mem_table[62].val=0;				0.01 mm quota fine corsa
+mem_table[62].read_only=TRUE;
+mem_table[63].descr=tast fuori ing;
+mem_table[63].val=30000;				0.01 gradi quota fuori ingombro tastatori
+mem_table[63].read_only=TRUE;
+mem_table[64].descr=Q_BancoCar0;
+mem_table[64].val=2737;					0.01 mm quota banco carico in bolla
+mem_table[64].read_only=TRUE;
+mem_table[65].descr=Q_BattTondoFuorIng;
+mem_table[65].val=56700;				0.01 gradi quota fuori ingombro Battuta tondo su banco di carico
+mem_table[65].read_only=TRUE;
+mem_table[66].descr=Q_BraccCarFuoriIng;
+mem_table[66].val=39000;				0.01 gradi quota fuori ingombro BraccCarico si usa l'analogica 14 mem 214
+mem_table[66].read_only=TRUE;
+mem_table[67].descr=Q_BraccCarPrelievo;
+mem_table[67].val=8620;					0.01 gradi quota prelievo BraccCarico si usa l'analogica 13 mem 213
+mem_table[67].read_only=TRUE;
+mem_table[68].descr=Q_BraccCarConsegna;
+mem_table[68].val=27500;				0.01 gradi quota consegna BraccCarico si usa l'analogica 13 mem 213
+mem_table[68].read_only=TRUE;
+mem_table[69].descr=Q_BaccCentFuoriIngRulliera;
+mem_table[69].val=0;					0.01 gradi quota Possizione Baccetti Centrali in Fuori Ingombro latto Rulliera
+mem_table[69].read_only=TRUE;
+mem_table[70].descr=Q_BraccCentPCRulliera;
+mem_table[70].val=700; 				0.01 gradi quota consegna e prelievo Baccetti Centrali su Rulliera
+mem_table[70].read_only=TRUE;
+mem_table[71].descr=Q_BraccCentPCPressa;
+mem_table[71].val=22600; 				0.01 gradi quota consegna e prelievo Baccetti Centrali su Pressa
+mem_table[71].read_only=TRUE;
+mem_table[72].descr=Q_BaccCentFuoriIngPressa;
+mem_table[72].val=37000; 				0.01 gradi quota Possizione Baccetti Centrali in Fuori Ingombro latto Pressa
+mem_table[72].read_only=TRUE;
+mem_table[73].descr=Q_BaccScarFuoriIng;
+mem_table[73].val=40000; 38600;ValOld				0.01 gradi quota fuori ingombro BraccScarico si usa l'analogica 18 mem 218
+mem_table[73].read_only=TRUE;
+mem_table[74].descr=Q_BraccScarPrelievo;
+mem_table[74].val=11800; 12700;ValOld		 		0.01 gradi quota prelievo BraccScarico si usa l'analogica 17 mem 217
+mem_table[74].read_only=TRUE;
+mem_table[75].descr=Q_BraccScarConsegna;
+mem_table[75].val=30500; 31500;ValOld				0.01 gradi quota consegna BraccScarico si usa l'analogica 17 mem 217
+mem_table[75].read_only=TRUE;
+mem_table[76].descr=Q_BancoScar0;
+mem_table[76].val=12391;					0.01 mm quota banco carico in bolla
+mem_table[76].read_only=TRUE;
+mem_table[77].descr=Q_PrismiAnticoll;
+mem_table[77].val=5000;					0.01 mm quota consegna in cui i prismi non sono in collisione con i braccetti centrali 
+mem_table[77].read_only=TRUE;
+mem_table[78].descr=Q_C1PreMisTondo;
+mem_table[78].val=100000;					0.01 mm Quota a cui si deve posizionare il carrello 1 per poi fare la misura del tondo
+mem_table[78].read_only=TRUE;
+mem_table[79].descr=Q_C2PreMisTondo;
+mem_table[79].val=-250000;					0.01 mm Quota a cui si deve posizionare il carrello 2 per poi fare la misura del tondo
+mem_table[79].read_only=TRUE;
+mem_table[80].descr=Q_C2MaxCorsaTraslazione;
+mem_table[80].val=-50000;					0.01 mm Limite di corsa Carrello 2 uguale al dato asse
+mem_table[80].read_only=TRUE;
+mem_table[81].descr=Q_C2MinCorsaTraslazione;
+mem_table[81].val=-384300;					0.01 mm Limite di corsa Carrello 2 uguale al dato asse
+mem_table[81].read_only=TRUE;
+mem_table[83].descr=Q_PressaSu;
+mem_table[83].val=40600					0.01 mm Quota dove la pressa è tutta su
+mem_table[83].read_only=TRUE;
+mem_table[84].descr=Q_AllineamentoTondo1;
+mem_table[84].val=112000;					0.01 mm Quota di fine del primo catarinfrangente a nastro (partendo dal centro pressa)
+mem_table[84].read_only=TRUE;
+mem_table[85].descr=Q_AllineamentoTondo2;
+mem_table[85].val=125000;					0.01 mm Quota di inizio del secondo catarinfrangente a nastro (partendo dal centro pressa)
+mem_table[85].read_only=TRUE;
+mem_table[86].descr=Q_AllineamentoTondo3;
+mem_table[86].val=152000;					0.01 mm Quota di fine del secondo catarinfrangente a nastro (partendo dal centro pressa)
+mem_table[86].read_only=TRUE;
+mem_table[87].descr=Q_AllineamentoTondo4;
+mem_table[87].val=165000;					0.01 mm Quota di inizio dell'ultimo catarinfrangente a nastro (partendo dal centro pressa)
+mem_table[87].read_only=TRUE;
+mem_table[88].descr=T_max_pressata;			0.01 s  Tempo massimo per una operazione di pressata
+mem_table[88].val=3000;					
+art.piece.mem_press_timeout=88;
+mem_table[88].read_only=TRUE;
+mem_table[89].descr=;
+mem_table[89].val=0;					Disponibile
+mem_table[89].read_only=TRUE;
+mem_table[91].descr=Q_BattutaTondo0;
+mem_table[91].val=50665;					0.01 gradi Quota in la battuta del tondo è in bolla (posizione verticale)
+mem_table[91].read_only=TRUE;
+mem_table[94].descr=Pos.Car.Scar.X ScarTondo[mm]; Posizione inserita nella pagina Avanzate per far decidere all'operatore la posizione dove scaricare il tondo
+mem_table[94].val=0;					0.01 gradi Quota in la battuta del tondo è in bolla (posizione verticale)
+mem_table[94].read_only=FALSE;
+mem_table[95].descr=Pos.Car.Scar.Allin. [mm]; Se 0 alineamento standard, altrimenti la posizione viene decisa dall'operatore
+mem_table[95].val=0;					0.01 mm Delta da sommare a riposizionamento dei carrelli 1 e 2 se la posizione di ricezione tondo finisce dove non ci sono catarinfrangenti
+mem_table[95].read_only=FALSE;
+mem_table[96].descr=Delta Allineamento Auto[mm];
+mem_table[96].val=100;					0.01 mm Delta da sommare a riposizionamento dei carrelli 1 e 2 se la posizione di ricezione tondo finisce dove non ci sono catarinfrangenti
+mem_table[96].read_only=FALSE;
+mem_table[97].descr=DeltaMisuraTondo;
+mem_table[97].val=-1500;					0.01 mm Delta che viene aggiunto alla misura rilevata dai carrelli per correggere la lunghezza del tondo
+mem_table[97].read_only=TRUE;
+mem_table[98].descr=DeltaAllinC1RicTondo;
+mem_table[98].val=20000;					0.01 mm Delta in cui il carrello 1 deve stare più verso la pressa 
+mem_table[98].read_only=TRUE;					;per far si che la rulliesa fermi il tondo in centro
+mem_table[99].descr=DeltaPosAssi;
+mem_table[99].val=500;					0.01 mm Delta per verificare la posizione dei assi
+mem_table[99].read_only=TRUE;
+mem_table[99].descr=DeltaPosMotori;
+mem_table[100].val=500;					0.01 mm Delta per verificare la posizione dei motori
+mem_table[100].read_only=TRUE;
+;
+;
+;			MEMORIE DI APPOGGIO PER CALCOLI
+mem_table[101].descr=appoggio calcoli C1; Memoria temporanea per programmi carrello 1
+mem_table[102].descr=appoggio calcoli C2; Memoria temporanea per programmi carrello 2
+mem_table[103].descr=appoggio calcoli Tast;Memoria temporanea per programmi tastatori
+mem_table[104].descr=appoggio calcoli BracCar;Memoria temporanea per programmi Braccetti Carico
+mem_table[105].descr=appoggio calcoli BracCent;Memoria temporanea per programmi Braccetti Centrarli
+mem_table[106].descr=appoggio calcoli BracScar;Memoria temporanea per programmi Braccetti Scarico
+mem_table[107].descr=appoggio calcoli Rulliera;Memoria temporanea per programmi Rulliera
+;
+;
+mem_table[111].descr=eccentricità max. [0.01 mm];
+mem_table[112].descr=x ecc. max. [0.01 mm];
+mem_table[113].descr=angolo ecc. max. [0.01 DEG];
+mem_table[114].descr=eccentricità centr. [0.01 mm];
+mem_table[116].descr=angolo ecc. centr. [0.01 DEG];
+mem_table[149].descr=Pressate Totali;
+mem_table[150].descr=Deformazione voluta;
+;
+;
+mem_table[157].descr=Tempo Raddrizzatura [s];
+mem_table[159].descr=Pressate Su Tondo Lavorato;
+mem_table[160].descr=Mem Deformazione Taratura;
+mem_table[161].descr=Temp Prog Taratura;
+;
+mem_table[170].descr=Stato overboost;
+mem_table[170].read_only=FALSE;
+;
+mem_table[173].descr=Max deform. overboost;
+;
+mem_table[200].descr=GetTime;
+system.mem_timer=200;
+;
+;
+;			ANALOGICHE
+mem_table[201].descr=pos.pressa;
+mem_table[201].read_only=TRUE;
+ana_table[1].mem_val=201;
+;
+mem_table[205].descr=tastatore 1;
+mem_table[205].read_only=TRUE;
+ana_table[5].mem_val=205;
+;
+mem_table[206].descr=tastatore 2;
+mem_table[206].read_only=TRUE;
+ana_table[6].mem_val=206;
+;
+mem_table[207].descr=tastatore 3;
+mem_table[207].read_only=TRUE;
+ana_table[7].mem_val=207;
+;
+mem_table[208].descr=tastatore 4;
+mem_table[208].read_only=TRUE;
+ana_table[8].mem_val=208;
+;
+mem_table[209].descr=tastatore 5;
+mem_table[209].read_only=TRUE;
+ana_table[9].mem_val=209;
+;
+mem_table[210].descr=tastatore 6;
+mem_table[210].read_only=TRUE;
+ana_table[10].mem_val=210;
+;
+mem_table[211].descr=tastatore 7;
+mem_table[211].read_only=TRUE;
+ana_table[11].mem_val=211;
+;
+mem_table[212].descr=tastatore 8;
+mem_table[212].read_only=TRUE;
+ana_table[12].mem_val=212;
+;
+mem_table[213].descr=bracc.car.1;
+mem_table[213].read_only=TRUE;
+ana_table[13].mem_val=213;
+;
+mem_table[214].descr=bracc.car.2;
+mem_table[214].read_only=TRUE;
+ana_table[14].mem_val=214;
+;
+mem_table[217].descr=bracc.scar.1;
+mem_table[217].read_only=TRUE;
+ana_table[17].mem_val=217;
+;
+mem_table[218].descr=bracc.scar.2;
+mem_table[218].read_only=TRUE;
+ana_table[18].mem_val=218;
+;
+mem_table[219].descr=z tast.centrale;
+mem_table[219].read_only=TRUE;
+ana_table[19].mem_val=219;
+;
+;
+mem_table[231].descr=ana br carico;
+mem_table[232].descr=ana br scarico;
+;
+;          DATI ASSI DA USARE NELLA PROGRAMMAZIONE
+;
+mem_table[251].descr=L_Asse1_limit_low; Carrello 1 (lato scarico)
+mem_table[251].read_only=TRUE;
+mem_table[251].val=31500;			* 0.01 mm
+mem_table[252].descr=L_Asse1_limit_high;
+mem_table[252].read_only=TRUE;
+mem_table[252].val=384500;		* 0.01 mm
+mem_table[253].descr=L_Asse2_limit_low; Carrello 2 (lato carico)
+mem_table[253].read_only=TRUE;
+mem_table[253].val=-384300;		* 0.01 mm
+mem_table[254].descr=L_Asse2_limit_high;
+mem_table[254].read_only=TRUE;
+mem_table[254].val=-31500;		* 0.01 mm
+mem_table[255].descr=L_Asse3_limit_low; Attuatore pressa
+mem_table[255].read_only=TRUE;
+mem_table[255].val=5350;			* 0.01 mm
+mem_table[256].descr=L_Asse3_limit_high;
+mem_table[256].read_only=TRUE;
+mem_table[256].val=8950; 8710;			* 0.01 mm
+mem_table[257].descr=L_Asse4_limit_low; Prismi
+mem_table[257].read_only=TRUE;
+mem_table[257].val=36000;		* 0.01 mm
+mem_table[258].descr=L_Asse4_limit_high;
+mem_table[258].read_only=TRUE;
+mem_table[258].val=74100;		* 0.01 mm
+mem_table[259].descr=L_Asse5_limit_low; Rotazione tondo su carrello 1
+mem_table[259].read_only=TRUE;
+mem_table[259].val=-1000;			* 0.01 mm
+mem_table[260].descr=L_Asse5_limit_high;
+mem_table[260].read_only=TRUE;
+mem_table[260].val=1000;			* 0.01 mm
+mem_table[261].descr=L_Asse6_limit_low; Rotazione tondo su carrello 2
+mem_table[261].read_only=TRUE;
+mem_table[261].val=-1000;			* 0.01 mm
+mem_table[262].descr=L_Asse6_limit_high;
+mem_table[262].read_only=TRUE;
+mem_table[262].val=1000;			* 0.01 mm
+;
+;
+mem_table[271].descr=L_Motore11_LimitMinPos; Inclinazione Banco Carico
+mem_table[271].read_only=TRUE;
+mem_table[271].val=2000;			* 0.01 mm
+mem_table[272].descr=L_Motore11_LimitMaxPos;
+mem_table[272].read_only=TRUE;
+mem_table[272].val=20500;			* 0.01 mm
+mem_table[273].descr=L_Motore12_LimitMinPos; Battuta Tondo
+mem_table[273].read_only=TRUE;
+mem_table[273].val=50000			 *0.01 gradi
+mem_table[274].descr=L_Motore12_LimitMaxPos;
+mem_table[274].read_only=TRUE;
+mem_table[274].val=57000			 *0.01 gradi
+mem_table[275].descr=L_Motore13_LimitMinPos; Braccetti Carico
+mem_table[275].read_only=TRUE;
+mem_table[275].val=2000			 *0.01 gradi
+mem_table[276].descr=L_Motore13_LimitMaxPos;
+mem_table[276].read_only=TRUE;
+mem_table[276].val=52000			 *0.01 gradi
+mem_table[277].descr=L_Motore14_LimitMinPos; Rulliera
+mem_table[277].read_only=TRUE;
+mem_table[277].val=-3276700			* 0.01 mm
+mem_table[278].descr=L_Motore14_LimitMaxPos;
+mem_table[278].read_only=TRUE;
+mem_table[278].val=3276700			* 0.01 mm
+mem_table[279].descr=L_Motore15_LimitMinPos; Tastatori
+mem_table[279].read_only=TRUE;
+mem_table[279].val=0			 *0.01 gradi
+mem_table[280].descr=L_Motore15_LimitMaxPos;
+mem_table[280].read_only=TRUE;
+mem_table[280].val=40000			 *0.01 gradi
+mem_table[281].descr=L_Motore16_LimitMinPos; Braccetti Centrali
+mem_table[281].read_only=TRUE;
+mem_table[281].val=0			 *0.01 gradi
+mem_table[282].descr=L_Motore16_LimitMaxPos;
+mem_table[282].read_only=TRUE;
+mem_table[282].val=37000			 *0.01 gradi
+mem_table[283].descr=L_Motore17_LimitMinPos; Inclinazione Banco Scarico
+mem_table[283].read_only=TRUE;
+mem_table[283].val=2000			* 0.01 mm
+mem_table[284].descr=L_Motore17_LimitMaxPos;
+mem_table[284].read_only=TRUE;
+mem_table[284].val=31000			* 0.01 mm
+;mem_table[285].descr=L_Motore18_LimitMinPos
+;mem_table[285].read_only=TRUE;
+;mem_table[285].val=0
+;mem_table[286].descr=L_Motore18_LimitMaxPos
+;mem_table[286].read_only=TRUE;
+;mem_table[286].val=0
+mem_table[287].descr=L_Motore19_LimitMinPos; Braccetti Scarico
+mem_table[287].read_only=TRUE;
+mem_table[287].val=0			 *0.01 gradi
+mem_table[288].descr=L_Motore19_LimitMaxPos;
+mem_table[288].read_only=TRUE;
+mem_table[288].val=54000			 *0.01 gradi
+;
+;			PAGINA PERSONALIZZATA
+;
+mem_table[144].descr=refresh pagina personalizzata;
+page_custom.mem_do_refresh=144;
+art.piece.mem_do_unstraight_refresh = 144;
+;
+mem_table[351].descr=;   Disponibile
+mem_table[352].descr=m [0.001];
+mem_table[353].descr=q [0.001];
+mem_table[354].descr=m0 [0.001];
+mem_table[355].descr=q0 [0.001];
+mem_table[356].descr=k [%] indice cedevolezza;
+mem_table[357].descr=a [0.01 mm] zero deformazione;
+;
+;END

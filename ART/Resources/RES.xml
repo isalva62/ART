@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <GROUP FileName="MEM.csv" Type="MEM" Descr="" />
+  <GROUP FileName="DIN.csv" Type="DIN" Descr="" />
+  <GROUP FileName="DOUT.csv" Type="DOUT" Descr="" />
+  <GROUP FileName="FLAG.csv" Type="FLAG" Descr="" />
+  <GROUP FileName="AXIS.csv" Type="AXIS" Descr="" />
+  <GROUP FileName="ERROR.csv" Type="ERROR" Descr="" />
+  <GROUP FileName="PROGRAM.csv" Type="PROGRAM" Descr="" />
+</Root>

@@ -1,0 +1,454 @@
+;		RADDRIZATONDI
+; parametri macchina
+; 2010-07-08
+;
+machine_data.project_id=ART0930;			Sigla su menu principale
+art.enable=TRUE;							Tipo macchina
+;
+;						LAN
+system.ethernet.VAR_IP_ADDRESS=10.11.12.10; 
+system.ethernet.VAR_IP_MASK=255.255.255.0; 
+system.ethernet.VAR_DEF_GATEWAY=10.11.12.1; 
+;
+;					Moduli hardware
+;x2x_bus[1].enable=TRUE;
+;x2x_bus[2].enable=TRUE;
+;x2x_bus[3].enable=TRUE;
+;powerlink_bus[1].enable=TRUE;
+;
+;					Opzioni pannello
+debug.skip_login=TRUE;
+log_file.events.enable=TRUE;
+page_common.change_language=1;					italiano
+page_common.comment_disable=1;
+page_common.develop_ctlmask=1;
+page_common.restore_disable=1;
+;
+;
+;					Dati macchina
+machine_data.zone_axes=0;
+machine_data.teach_acc_fast=50;
+machine_data.teach_acc_slow=40;
+machine_data.teach_speed_fast=20;
+machine_data.teach_speed_slow=2;
+machine_data.max_filter=0.50;					s
+machine_data.prog_default=0;					selezione libera programmi
+;
+;
+art.config.min_diameter=4000;					diametro minimo tondo
+art.config.max_diameter=16000;					diametro massimo tondo
+art.config.min_length=100000;					lunghezza minima tondo
+art.config.max_length=400000;					lunghezza massima tondo
+art.config.roll_axis_head=5;					asse rotazione in cima
+art.config.roll_axis_tail=6;					asse rotazione in fondo
+art.config.rolls_diameter=9000;					diametro rullini di supporto
+art.config.rolls_distance=10000;				interasse dei rullini
+art.config.rolls_z_center=-2100;				quota z del centro dei rullini (scarichi)
+art.config.touchsensors_mov_radius=30000;		raggio rotazione tastatori
+art.config.touchsensors_mov_z0=4000;			quota z dei tastatori quando verticali
+art.config.ecc_alarm=350;				[0.01 mm] eccentricità limite oltre la quale non si raddrizza il tondo (in automatico)
+art.config.max_deformation=400;				[0.01 mm] massima deformazione ammissibile
+art.config.flag_press_overboost=127;				FLAG che abilita l'overboost della pressa fino alla quota max ammissibile
+art.config.max_deformation_with_overboost=1000;				[0.01 mm] massima deformazione ammissibile con overboost attivo
+art.config.mem_max_def_with_overboost=173;				[0.01 mm] massima deformazione ammissibile con overboost attivo
+art.config.mem_x_pos=1;					memoria posizione asse carrello 1
+art.config.mem_prism_pos=4;				memoria posizione asse prismi
+art.config.cart_prism_security_distance=16000;		[0.01 mm] distanza di sicurezza minima tra punto di contatto del tondo sul carrello e centro del relativo prisma
+art.touch.touching_pos=500;				[0.01mm] quota fino a cui i tastatori vengono premuti perchè siano tutti a contatto
+art.touch.touchsensors[1].x_pos=157800;
+art.touch.touchsensors[2].x_pos=82800;
+art.touch.touchsensors[3].x_pos=44500;
+art.touch.touchsensors[4].x_pos=24500;
+art.touch.touchsensors[0].x_pos=0;					tastatore sotto la pressa
+art.touch.touchsensors[5].x_pos=-24500;
+art.touch.touchsensors[6].x_pos=-44500;
+art.touch.touchsensors[7].x_pos=-82000;
+art.touch.touchsensors[8].x_pos=-157000;
+art.touch.touchsensors[9].x_pos=120300;-119500				Inserito il 22/07/2011
+art.touch.touchsensors[10].x_pos=-119500;120300			Inserito il 22/07/2011
+art.press.contact_gap=200;						[0.01 mm] avvicinamento al punto di lavoro
+art.press.extra_press_pos=1500;					[0.01 mm] [INUTILE! basta che sia > 100] oltrecorsa rispetto al punto di lavoro, fermato dal sensore
+art.press.rolls_prisms_gap_m=0.65;				coefficiente angolare curva di taratura dist.prismi-carrelli in 0.01 mm in funzione del diametro in mm
+art.press.rolls_prisms_gap_q=389.5;				intercectta curva di taratura dist.prismi-carrelli in 0.01 mm in funzione del diametro in mm
+art.press.move_speed_percent=100;				[%] velocità pressa a vuoto
+art.press.compact_speed_percent=22;				[%] velocità pressa durante il compattamento del tondo sui prismi
+art.press.work_speed_percent=6;					[%] velocità pressa durante la deformazione
+;
+art.press.z_sensor_enabled=FALSE;				abilitazione servizio di sincronizzazione tra potenziometro pressa verticale e quota stimata della pressa
+art.press.z_sensor_tolerance=2000;				[0.01 mm] massima differenza tra potenziometro pressa e valore stimato dell'asse
+;
+art.press.pos_table.def_points=9;				posizioni leva/pressa
+art.press.pos_table.x[0]=5500;
+art.press.pos_table.y[0]=8513; 8500;
+art.press.pos_table.x[1]=5750;
+art.press.pos_table.y[1]=10013; 10033;
+art.press.pos_table.x[2]=6000;
+art.press.pos_table.y[2]=11606; 11806;
+art.press.pos_table.x[3]=6250;
+art.press.pos_table.y[3]=13293; 13536;
+art.press.pos_table.x[4]=6500;
+art.press.pos_table.y[4]=14983; 15462;
+art.press.pos_table.x[5]=7000;
+art.press.pos_table.y[5]=18525; 19458;
+art.press.pos_table.x[6]=7500;
+art.press.pos_table.y[6]=22221; 23518;
+art.press.pos_table.x[7]=8000;
+art.press.pos_table.y[7]=26058; 27856;
+art.press.pos_table.x[8]=9000; 8710
+art.press.pos_table.y[8]=40570; 40800;
+;
+art.press.punches.punches_offset[1]=500;		Offset punzone per tondi da 100-150 mm (collaudo)
+art.press.punches.punches_offset[2]=6100;		Offset punzone per tondi da 50-99 mm (collaudo)
+;
+art.piece.material_config[1].material_id=1; 		caratteristica materiale bonificato (DURO)
+art.piece.material_config[1].m=0.3966;
+art.piece.material_config[1].q=-79.32;
+art.piece.material_config[1].m0=-0.0134;
+art.piece.material_config[1].q0=3.66;
+art.piece.material_config[2].material_id=2; 		caratteristica materiale ricotto (MOLLE)
+art.piece.material_config[2].m=0.7756;
+art.piece.material_config[2].q=-164.19;
+art.piece.material_config[2].m0=-0.0134;
+art.piece.material_config[2].q0=3.66;
+;
+;					Codici Errori
+user_alarms[1].descr=Sensore allin.C1 non commutato;	
+user_alarms[2].descr=Sensore allin.C2 non commutato;	
+user_alarms[3].descr=Tondo non presente su rulliera;
+user_alarms[4].descr=Tondo presente su carrello 1;
+user_alarms[5].descr=Tondo non in posizione di carico;
+user_alarms[6].descr=Pressa Spenta;
+user_alarms[7].descr=Salvamotore Pressa Off;
+user_alarms[8].descr=Braccetti carico non in fuori ingombro;
+user_alarms[9].descr=Braccetti scarico non in fuori ingombro;
+user_alarms[10].descr=Tondo non presente su rulliera;
+user_alarms[11].descr=Tondo presente su carrello 2;
+user_alarms[12].descr=Tastatori Non FuoriIngombro;
+user_alarms[13].descr=Tondo non in posizione di scarico              ;
+user_alarms[14].descr=Bracc. centrali non in fuori ingombro rulliera ;
+user_alarms[15].descr=Bracc. centrali non in fuori ingombro pressa;
+user_alarms[16].descr=Carrello 1 non è in pos. per spostare il tondo ;
+user_alarms[17].descr=LavoroTerminato;
+user_alarms[18].descr=Tondo Non Presente Su Carrello 1;
+user_alarms[19].descr=Tondo Non Presente Su Carrello 2;
+user_alarms[20].descr=Prismi non in fuori ingombro;
+user_alarms[21].descr=Carrello 1 non in FuoriIngombro;
+user_alarms[22].descr=Carrello 2 non in FuoriIngombro;
+user_alarms[23].descr=Pressa non su;
+user_alarms[24].descr=Banco carico non in pos. per Auto;
+user_alarms[25].descr=Banco scarico non in pos. per Auto;
+user_alarms[26].descr=Macchina non azzerata;
+user_alarms[27].descr=Pestone Errato;
+user_alarms[28].descr=Pressa appoggiata sul tondo;
+user_alarms[29].descr=Tastatori appoggiati sul tondo;
+user_alarms[30].descr=Il carrello 1 non è in posizione scarico tondo;
+user_alarms[31].descr=Collisione tra Prismi e Carrelli;
+user_alarms[32].descr=Lunghezza tondo minore di 1000mm;
+user_alarms[33].descr=Sensore Carrello 2 Allineamento Tondo Spento;
+user_alarms[34].descr=Sensore Carrello 2 Allineamento Tondo Spento;
+user_alarms[35].descr=Tondo fermo in pos di scarico;
+
+;user_alarms[].descr=;
+;
+;					Processi non interrompibili
+proc_list[1].background=1;
+proc_list[1].prog_stack[0].prog_id=2;
+;					Macrotasti
+MacroButtons[0].Description=+ banco carico;
+MacroButtons[0].n_prog=120;
+MacroButtons[0].level=1;
+MacroButtons[1].Description=- banco carico;
+MacroButtons[1].n_prog=121;
+MacroButtons[1].level=1;
+MacroButtons[2].Description=+ battute;
+MacroButtons[2].n_prog=122;
+MacroButtons[2].level=1;
+MacroButtons[3].Description=- battute;
+MacroButtons[3].n_prog=123;
+MacroButtons[3].level=1;
+MacroButtons[4].Description=+ bracci car;
+MacroButtons[4].n_prog=124;
+MacroButtons[4].level=1;
+MacroButtons[5].Description=- bracci car;
+MacroButtons[5].n_prog=125;
+MacroButtons[5].level=1;
+MacroButtons[6].Description=+ rulli;
+MacroButtons[6].n_prog=126;
+MacroButtons[6].level=1;
+MacroButtons[7].Description=- rulli;
+MacroButtons[7].n_prog=127;
+MacroButtons[7].level=1;
+MacroButtons[8].Description=+ salita tast;
+MacroButtons[8].n_prog=128;
+MacroButtons[8].level=1;
+MacroButtons[9].Description=- discesa tast;
+MacroButtons[9].n_prog=129;
+MacroButtons[9].level=1;
+MacroButtons[10].Description=+ br.centrali;
+MacroButtons[10].n_prog=130;
+MacroButtons[10].level=1;
+MacroButtons[11].Description=- br.centrali;
+MacroButtons[11].n_prog=131;
+MacroButtons[11].level=1;
+MacroButtons[12].Description=+ banco scar;
+MacroButtons[12].n_prog=132;
+MacroButtons[12].level=1;
+MacroButtons[13].Description=- banco scar;
+MacroButtons[13].n_prog=133;
+MacroButtons[13].level=1;
+MacroButtons[14].Description=+ bracci scar;
+MacroButtons[14].n_prog=134;
+MacroButtons[14].level=1;
+MacroButtons[15].Description=- bracci scar;
+MacroButtons[15].n_prog=135;
+MacroButtons[15].level=1;
+MacroButtons[16].Description=+ Carrello1;
+MacroButtons[16].n_prog=136;
+MacroButtons[16].level=1;
+MacroButtons[17].Description=- Carrello1;
+MacroButtons[17].n_prog=137;
+MacroButtons[17].level=1;
+MacroButtons[18].Description=+ Carrello2;
+MacroButtons[18].n_prog=138;
+MacroButtons[18].level=1;
+MacroButtons[19].Description=- Carrello2;
+MacroButtons[19].n_prog=139;
+MacroButtons[19].level=1;
+MacroButtons[20].Description=AttuatorePressaSu;
+MacroButtons[20].n_prog=140;
+MacroButtons[20].level=1;
+MacroButtons[21].Description=AttuatorePressaGiù;
+MacroButtons[21].n_prog=141;
+MacroButtons[21].level=1;
+MacroButtons[22].Description=+ Carrelli;
+MacroButtons[22].n_prog=142;
+MacroButtons[22].level=1;
+MacroButtons[23].Description=- Carrelli;
+MacroButtons[23].n_prog=143;
+MacroButtons[23].level=1;
+;
+;					Pagina personalizzata
+;
+;
+;	--------------- DATI e AUTO ----------------
+page_custom.page_titles[0]=Dati e Auto;
+page_custom.mem_id[1]=45;			//tondi da lavorare
+page_custom.mem_val_min[1]=0;
+page_custom.mem_val_max[1]=24;
+page_custom.mem_id[2]=42;			//diametro
+page_custom.mem_val_min[2]=50;
+page_custom.mem_val_max[2]=150;
+page_custom.mem_id[3]=41;			//lunghezza
+page_custom.mem_val_min[3]=1000;
+page_custom.mem_val_max[3]=4000;
+page_custom.mem_id[4]=44;			//materiale
+page_custom.mem_val_min[4]=1;
+page_custom.mem_val_max[4]=3;
+page_custom.mem_id[5]=47;			//tolleranza
+page_custom.mem_val_min[5]=4;
+page_custom.mem_val_max[5]=20;
+page_custom.mem_id[6]=170;			//Stato overboost
+page_custom.mem_id[7]=46;			//tondi lavorati
+page_custom.mem_val_min[7]=0;
+page_custom.mem_val_max[7]=24;
+page_custom.mem_id[8]=60;			//tondi non raddrizzati
+page_custom.mem_val_min[8]=0;
+page_custom.mem_val_max[8]=24;
+;
+page_custom.button_id[1]=24;
+MacroButtons[24].Description=Reset assi;
+MacroButtons[24].n_prog=3;
+MacroButtons[24].level=1;
+page_custom.button_id[2]=25;
+MacroButtons[25].Description=Rest Parziale;
+MacroButtons[25].n_prog=99;
+MacroButtons[25].level=1;
+page_custom.button_id[3]=26;
+MacroButtons[26].Description=Pos. banchi a 0;
+MacroButtons[26].n_prog=100;
+MacroButtons[26].level=1;
+page_custom.button_id[4]=27;
+MacroButtons[27].Description=Pos. banchi per automatico;
+MacroButtons[27].n_prog=101;
+MacroButtons[27].level=1;
+page_custom.button_id[5]=28;
+MacroButtons[28].Description=Start auto;
+MacroButtons[28].n_prog=1;
+MacroButtons[28].level=1;
+page_custom.button_id[6]=29;		
+MacroButtons[29].Description=Abilita overboost;
+MacroButtons[29].n_prog=98;
+MacroButtons[29].level=1;
+page_custom.button_id[7]=30;
+MacroButtons[30].Description=Reset tondi non raddr.;
+MacroButtons[30].n_prog=104;
+MacroButtons[30].level=1;
+;page_custom.button_id[8]=0;		NON UTILIZZABILE
+;
+;	--------------- AVANZATE ----------------
+page_custom.page_titles[1]=Avanzate;
+page_custom.mem_id[9]=57;			//num. max. pressate
+page_custom.mem_val_min[9]=1;
+page_custom.mem_val_max[9]=200;
+page_custom.mem_id[10]=43;			//DL_RaddrizzaturaConInseguimento
+page_custom.mem_val_min[10]=0;
+page_custom.mem_val_max[10]=1;
+page_custom.mem_id[11]=173;		Massima deofrmazione in overboost
+page_custom.mem_val_min[11]=400;
+page_custom.mem_val_max[11]=1000;
+page_custom.mem_id[12]=95;			Pos.Car.Scar.Allin. [mm]
+page_custom.mem_val_min[12]=0;
+page_custom.mem_val_max[12]=3000;   
+page_custom.mem_id[13]=94;			PosCarScarPerScaricTondo [mm]
+page_custom.mem_val_min[13]=0;      Se minore di 879 non viene considerata
+page_custom.mem_val_max[13]=1175;   
+
+;page_custom.mem_id[14]=0;			DISPONIBILE
+;page_custom.mem_id[15]=0;			DISPONIBILE
+page_custom.mem_id[16]=157;		    //Tempo Raddrizzatura
+;
+page_custom.button_id[9]=31;
+MacroButtons[31].Description=Ripristino Missione;
+MacroButtons[31].n_prog=106;
+MacroButtons[31].level=1;
+MacroButtons[31].skip_confirm=FALSE;
+page_custom.button_id[10]=32;
+MacroButtons[32].Description=Tondo BancoCar -> Carrelli;
+MacroButtons[32].n_prog=102;
+MacroButtons[32].level=1;
+page_custom.button_id[11]=33;
+MacroButtons[33].Description=Tondo Carrelli -> BancoScar;
+MacroButtons[33].n_prog=103;
+MacroButtons[33].level=1;
+page_custom.button_id[12]=34;
+MacroButtons[34].Description=Tondo BancoCar -> rulliera;
+MacroButtons[34].n_prog=105;
+MacroButtons[34].level=1;
+page_custom.button_id[13]=35;
+MacroButtons[35].Description=Tondo rulliera -> carrelli;
+MacroButtons[35].n_prog=107;
+MacroButtons[35].level=1;
+MacroButtons[35].skip_confirm=FALSE;
+page_custom.button_id[14]=36;
+MacroButtons[36].Description=Tondo carrelli -> rulliera;
+MacroButtons[36].n_prog=108;
+MacroButtons[36].level=1;
+MacroButtons[36].skip_confirm=FALSE;
+page_custom.button_id[15]=37;
+MacroButtons[37].Description=Tondo rulliera -> scarico;
+MacroButtons[37].n_prog=109;
+MacroButtons[37].level=1;
+MacroButtons[37].skip_confirm=FALSE;
+;page_custom.button_id[16]=0;		NON UTILIZZABILE
+;
+;	--------------- RADDR. MAN ----------------
+page_custom.page_titles[2]=Raddr. Man.;
+page_custom.mem_id[17]=44;			//materiale
+page_custom.mem_val_min[17]=0;
+page_custom.mem_val_max[17]=39;
+page_custom.mem_id[18]=31;			//[mm] distanza prismi voluta
+page_custom.mem_val_min[18]=365;
+page_custom.mem_val_max[18]=740;
+page_custom.mem_id[19]=32;			//[0.01 mm] quota tondo voluta sotto pestone rispetto al centro
+page_custom.mem_val_min[19]=-1750;
+page_custom.mem_val_max[19]=1750;
+page_custom.mem_id[20]=33;			//[0.01 mm] tolleranza voluta
+page_custom.mem_val_min[20]=4;
+page_custom.mem_val_max[20]=20;
+page_custom.mem_id[21]=34;			//[0.01 mm] deformazione voluta
+page_custom.mem_val_min[21]=0;
+page_custom.mem_val_max[21]=1000;
+page_custom.mem_id[22]=111;			//[0.01 mm] eccentricità max.
+page_custom.mem_id[23]=114;			//[0.01 mm] eccentricità tastatore centrale
+page_custom.mem_id[24]=219;			//[0.01 mm] quota tastatore centrale
+;
+page_custom.button_id[17]=38;
+MacroButtons[38].Description=Posiziona prismi;
+MacroButtons[38].n_prog=111;
+MacroButtons[38].level=1;
+page_custom.button_id[18]=39;
+MacroButtons[39].Description=Posiziona tondo;
+MacroButtons[39].n_prog=112;
+MacroButtons[39].level=1;
+page_custom.button_id[19]=40;
+MacroButtons[40].Description=Raddrizza sezione;
+MacroButtons[40].n_prog=113;
+MacroButtons[40].level=1;
+page_custom.button_id[20]=41;
+MacroButtons[41].Description=Pressa;
+MacroButtons[41].n_prog=114;
+MacroButtons[41].level=1;
+page_custom.button_id[21]=42;
+MacroButtons[42].Description=Tasteggio completo;
+MacroButtons[42].n_prog=115;
+MacroButtons[42].level=1;
+page_custom.button_id[22]=43;
+MacroButtons[43].Description=Tasteggio locale;
+MacroButtons[43].n_prog=116;
+MacroButtons[43].level=1;
+page_custom.button_id[23]=44;
+MacroButtons[44].Description=Posiziona pressa;
+MacroButtons[44].n_prog=117;
+MacroButtons[44].level=1;
+;page_custom.button_id[24]=0;		NON UTILIZZABILE
+;
+;	--------------- MATERIALI ----------------
+page_custom.page_titles[3]=Mater. Speciale;
+page_custom.mem_id[25]=356;			//k [%]
+page_custom.mem_val_min[25]=10;
+page_custom.mem_val_max[25]=5000;
+page_custom.mem_id[26]=357;			//a [0.01 mm]
+page_custom.mem_val_min[26]=0;
+page_custom.mem_val_max[26]=400;
+;page_custom.button_id[27]=0;			DISPONIBILE
+page_custom.mem_id[28]=352;			//[0.001] m
+page_custom.mem_id[29]=353;			//[0.001] q
+page_custom.mem_id[30]=354;			//[0.001] m0
+page_custom.mem_id[31]=355;			//[0.001] q0
+;page_custom.button_id[32]=0;			DISPONIBILE
+;
+page_custom.button_id[25]=45;
+MacroButtons[45].Description=Carica materiale;
+MacroButtons[45].n_prog=118;
+MacroButtons[45].level=1;
+MacroButtons[45].skip_confirm=TRUE;
+page_custom.button_id[26]=46;
+MacroButtons[46].Description=Salva materiale;
+MacroButtons[46].n_prog=119;
+MacroButtons[46].level=1;
+MacroButtons[46].skip_confirm=TRUE;
+;page_custom.button_id[27]=47;			DISPONIBILE
+page_custom.button_id[28]=48;			DISPONIBILE
+MacroButtons[48].Description=Tara materiale;
+MacroButtons[48].n_prog=4;
+MacroButtons[48].level=1;
+;page_custom.button_id[29]=49;			DISPONIBILE
+;page_custom.button_id[30]=50;			DISPONIBILE
+;page_custom.button_id[31]=51;			DISPONIBILE
+;page_custom.button_id[32]=0;		NON UTILIZZABILE
+;
+;
+;	--------------- STATO ----------------
+page_custom.page_titles[4]=Stato;
+page_custom.mem_id[33]=111;			//[0.01 mm] eccentricità max.
+page_custom.mem_id[34]=112;			//[0.01 mm] quota eccentricità max
+page_custom.mem_id[35]=113;			//[0.01 °] angolo eccentricità max
+page_custom.mem_id[36]=114;			//[0.01 mm] eccentricità tastatore centrale
+page_custom.mem_id[37]=116;			//[0.01 °] angolo eccentricità tastatore centrale
+page_custom.mem_id[38]=150;           Deformazione voluta
+page_custom.mem_id[39]=149;			//Contatore pressate totali
+page_custom.mem_id[40]=159;		    //Pressate Su Tondo Lavorato
+;
+;page_custom.button_id[33]=52;			DISPONIBILE
+;page_custom.button_id[34]=53;			DISPONIBILE
+;page_custom.button_id[35]=54;			DISPONIBILE
+;page_custom.button_id[36]=55;			DISPONIBILE
+;page_custom.button_id[37]=56;			DISPONIBILE
+;page_custom.button_id[38]=57;			DISPONIBILE
+page_custom.button_id[39]=58;
+MacroButtons[58].Description=Azzera pressate totali;
+MacroButtons[58].n_prog=110;
+MacroButtons[58].level=1;
+MacroButtons[58].skip_confirm=FALSE;
+;page_custom.button_id[40]=0;		NON UTILIZZABILE
+;END
